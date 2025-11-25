@@ -5,6 +5,7 @@
 
 [build.environment]
   VITE_API_URL = "https://inventory-management-system-xyg3.onrender.com"
+  CI = "true"
 
 [[redirects]]
   from = "/*"
