@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ShopLocal Design System - Professional Retail Management Interface */
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 215 16% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 16% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 16% 22%;
+
+    /* Professional blue theme matching the designs */
+    --primary: 217 91% 59%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-hover: 217 91% 54%;
+    --primary-light: 217 100% 97%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 215 16% 22%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 215 13% 54%;
+
+    --accent: 217 91% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 96%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 100% 97%;
+
+    --border: 214 13% 91%;
+    --input: 214 13% 91%;
+    --ring: 217 91% 59%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar styling */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 16% 22%;
+    --sidebar-primary: 217 91% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 100% 97%;
+    --sidebar-accent-foreground: 217 91% 59%;
+    --sidebar-border: 214 13% 91%;
+    --sidebar-ring: 217 91% 59%;
+
+    /* Status colors */
+    --status-in-stock: 142 76% 36%;
+    --status-low-stock: 38 92% 50%;
+    --status-out-of-stock: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 215 28% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 59%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 64%;
+    --primary-light: 217 50% 15%;
+
+    --secondary: 215 27% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 27% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 41%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 15%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 50% 15%;
+
+    --border: 215 27% 17%;
+    --input: 215 27% 17%;
+    --ring: 217 91% 59%;
+
+    --sidebar-background: 215 28% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 27% 17%;
+    --sidebar-accent-foreground: 217 91% 59%;
+    --sidebar-border: 215 27% 17%;
+    --sidebar-ring: 217 91% 59%;
+
+    --status-in-stock: 142 76% 41%;
+    --status-low-stock: 38 92% 55%;
+    --status-out-of-stock: 0 62% 31%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
