@@ -55,7 +55,8 @@ export default function Dashboard() {
 
     const loadMonthlySales = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/reports/monthly-sales');
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const response = await fetch(`${apiUrl}/api/reports/monthly-sales`);
         if (!response.ok) throw new Error(`Failed to load monthly sales (${response.status})`);
         const payload = await response.json();
         const fromApi = Array.isArray(payload?.data) ? payload.data : null;

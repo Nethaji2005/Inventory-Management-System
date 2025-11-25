@@ -90,16 +90,15 @@ export default function Reports() {
       query.append('endDate', endDate);
     }
 
-    const fetchReports = async () => {
-      setLoading(true);
-      setError(null);
+      const fetchReports = async () => {
+        setLoading(true);
+        setError(null);
 
-      try {
-        const url = query.toString()
-          ? `http://localhost:5000/api/reports?${query.toString()}`
-          : 'http://localhost:5000/api/reports';
-
-        const response = await fetch(url, { signal: controller.signal });
+        try {
+          const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+          const url = query.toString()
+            ? `${apiUrl}/api/reports?${query.toString()}`
+            : `${apiUrl}/api/reports`;        const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) {
           throw new Error(`Failed to load reports (status ${response.status})`);
         }

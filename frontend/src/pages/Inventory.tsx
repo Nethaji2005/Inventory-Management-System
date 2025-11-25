@@ -82,7 +82,8 @@ export default function Inventory() {
     setIsFetchingProducts(true);
     setFetchProductsError(null);
     try {
-      const response = await fetch('http://localhost:5000/api/products');
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/products`);
       if (!response.ok) {
         throw new Error(`Failed to load products (status ${response.status})`);
       }
@@ -213,7 +214,8 @@ export default function Inventory() {
         quantity: numQuantity,
       });
       
-      const response = await fetch('http://localhost:5000/api/products', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -305,7 +307,8 @@ export default function Inventory() {
         sku: editingProduct.productId.toUpperCase(),
       });
 
-      const response = await fetch(`http://localhost:5000/api/products/${editingProduct.id}`, {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/products/${editingProduct.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -351,7 +354,7 @@ export default function Inventory() {
       if (error instanceof TypeError) {
         console.error('Network error details:', error.message);
         if (error.message.includes('fetch')) {
-          errorMessage = 'Cannot connect to server. Backend running on http://localhost:5000 ? Check console.';
+          errorMessage = 'Cannot connect to server. Please check your backend connection.';
         }
       } else if (error instanceof Error) {
         errorMessage = error.message;
@@ -371,7 +374,8 @@ export default function Inventory() {
 
     setDeletingProductId(product.id);
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${product.id}`, {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/products/${product.id}`, {
         method: 'DELETE',
       });
 
