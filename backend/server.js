@@ -35,6 +35,23 @@ app.use(cors({
 
 app.use(express.json());
 
+// Health check / root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Inventory Management System API',
+    endpoints: {
+      products: '/api/products',
+      sales: '/api/sales',
+      purchases: '/api/purchases',
+      reports: '/api/reports',
+      dashboard: '/api/dashboard',
+      settings: '/api/settings',
+      auth: '/api/auth'
+    }
+  });
+});
+
 const PORT = process.env.PORT || 5000;
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/shop';
 async function startServer() {
