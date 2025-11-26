@@ -24,7 +24,7 @@ export default function Settings() {
   const [isSavingProfile, setIsSavingProfile] = useState(false);
   const [isUploadingLogo, setIsUploadingLogo] = useState(false);
 
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
 
   const handleSaveShopDetails = async () => {
     setIsSavingShop(true);

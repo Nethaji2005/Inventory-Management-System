@@ -18,7 +18,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { state, dispatch } = useShop();
   const navigate = useNavigate();
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

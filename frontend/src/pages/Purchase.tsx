@@ -267,7 +267,7 @@ export default function Purchase() {
         }))
       };
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
       const response = await fetch(`${apiUrl}/api/purchases`, {
         method: 'POST',
         headers: {
