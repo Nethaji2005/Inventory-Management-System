@@ -23,8 +23,10 @@ const allowedOrigins = [
   'http://localhost:5173',
   'https://system-inky-two.vercel.app',
   'https://inventory-management-frontend.vercel.app',
+  'https://bala-tarpaulins-app.netlify.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
+
 
 app.use(cors({
   origin: allowedOrigins,

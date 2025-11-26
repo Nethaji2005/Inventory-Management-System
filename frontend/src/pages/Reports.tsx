@@ -95,7 +95,7 @@ export default function Reports() {
         setError(null);
 
         try {
-          const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+          const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
           const url = query.toString()
             ? `${apiUrl}/api/reports?${query.toString()}`
             : `${apiUrl}/api/reports`;        const response = await fetch(url, { signal: controller.signal });

@@ -347,7 +347,7 @@ export function ShopProvider({ children }: { children: ReactNode }) {
     hasFetchedInitialProductsRef.current = true;
 
     const fetchInitialData = async () => {
-      const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
       try {
         // Fetch shop settings from backend
         const settingsResponse = await fetch(`${API_BASE_URL}/api/settings`);

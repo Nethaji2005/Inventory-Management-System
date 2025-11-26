@@ -82,7 +82,7 @@ export default function Inventory() {
     setIsFetchingProducts(true);
     setFetchProductsError(null);
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
       const response = await fetch(`${apiUrl}/api/products`);
       if (!response.ok) {
         throw new Error(`Failed to load products (status ${response.status})`);
@@ -214,7 +214,7 @@ export default function Inventory() {
         quantity: numQuantity,
       });
       
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
       const response = await fetch(`${apiUrl}/api/products`, {
         method: 'POST',
         headers: {
@@ -279,7 +279,7 @@ export default function Inventory() {
       if (error instanceof TypeError) {
         console.error('Network error details:', error.message);
         if (error.message.includes('fetch')) {
-          errorMessage = 'Cannot connect to server. Backend running on https://inventory-management-system-xyg3.onrender.com/ ? Check console.';
+          errorMessage = 'Cannot connect to server. Backend running on https://inventory-management-system-xyg3.onrender.com ? Check console.';
         }
       } else if (error instanceof Error) {
         errorMessage = error.message;
@@ -307,7 +307,7 @@ export default function Inventory() {
         sku: editingProduct.productId.toUpperCase(),
       });
 
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
       const response = await fetch(`${apiUrl}/api/products/${editingProduct.id}`, {
         method: 'PUT',
         headers: {
@@ -374,7 +374,7 @@ export default function Inventory() {
 
     setDeletingProductId(product.id);
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
       const response = await fetch(`${apiUrl}/api/products/${product.id}`, {
         method: 'DELETE',
       });

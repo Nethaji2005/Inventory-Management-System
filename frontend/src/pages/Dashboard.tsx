@@ -55,7 +55,7 @@ export default function Dashboard() {
 
     const loadMonthlySales = async () => {
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com/';
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://inventory-management-system-xyg3.onrender.com';
         const response = await fetch(`${apiUrl}/api/reports/monthly-sales`);
         if (!response.ok) throw new Error(`Failed to load monthly sales (${response.status})`);
         const payload = await response.json();
